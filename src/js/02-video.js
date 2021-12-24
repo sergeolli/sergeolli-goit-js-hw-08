@@ -12,7 +12,7 @@ player.setCurrentTime(JSON.parse(localStorage.getItem('videoplayer-current-time'
      
     
 
-
+   
 
 
 
