@@ -13,17 +13,16 @@ saveСheckValues();
 refs.form.addEventListener('submit', onFormSabmit);
 refs.form.addEventListener('input', throttle(onFormInput,500));
 
-function onFormInput(e) {
-    const formElements = e.currentTarget.elements;
-    const email = formElements.email.value;
-    const message = formElements.message.value;
+function onFormInput() {
+    const email = refs.formInput.value 
+    const message = refs.formTextarea.value
     const formDataSave = {
         email, message
     };
     localStorage.setItem(STOREG_KEY, JSON.stringify(formDataSave));
-    const formData = JSON.parse(localStorage.getItem(STOREG_KEY)); 
-    refs.formTextarea.value = formData.message
-    refs.formInput.value = formData.email
+    //const formData = JSON.parse(localStorage.getItem(STOREG_KEY)); 
+    //refs.formTextarea.value = formData.message
+    //refs.formInput.value = formData.email
 }
 
 function onFormSabmit(e) {
